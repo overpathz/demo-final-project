@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+
+    <!-- Example change sets -->
+    <changeSet id="create-users-table" author="your_name">
+        <createTable tableName="users">
+            <column name="id" type="bigserial">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="add-extraInfo-column" author="your_name">
+        <addColumn tableName="users">
+            <column name="extra_info" type="varchar(255)"/>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="insert-users" author="your_name">
+        <sql>INSERT INTO users (id, email, password, role) VALUES (DEFAULT, 'user1@example.com', 'password1', 'ROLE_VIP');</sql>
+    </changeSet>
+
+    <!-- default -->
+    <changeSet id="insert-users-2" author="your_name">
+        <sql>INSERT INTO users (id, email, password, role) VALUES (DEFAULT, 'user2@example.com', '$2a$10$odmfV1blqg8ZFCnAqNph1ekDTenfpzhcnmpLqxctFhJNlKD3NsrHy', 'ROLE_ADMIN');</sql>
+    </changeSet>
+
+    <changeSet id="insert-users-3" author="your_name">
+        <sql>INSERT INTO users (id, email, password, role) VALUES (DEFAULT, 'user3@example.com', '$2a$10$odmfV1blqg8ZFCnAqNph1ekDTenfpzhcnmpLqxctFhJNlKD3NsrHy', 'ROLE_DEFAULT');</sql>
+    </changeSet>
+
+    <changeSet id="create-cities-table" author="your_name">
+        <createTable tableName="cities">
+            <column name="id" type="bigserial">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="insert-cities" author="your_name">
+        <sql>INSERT INTO cities (id, name) VALUES (DEFAULT, 'City1');</sql>
+    </changeSet>
+
+    <changeSet id="insert-cities-2" author="your_name">
+        <sql>INSERT INTO cities (id, name) VALUES (DEFAULT, 'City2');</sql>
+    </changeSet>
+
+
+</databaseChangeLog>

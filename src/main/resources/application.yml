@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    username: postgres
+    password: postgres
+
+  jpa:
+    show-sql: true
+
+
+  liquibase:
+    change-log: "classpath:db/changelog/db.changelog-master.xml"
+
+security:
+  jwt:
+    secretKey: zZrq0sZK1yt9RJk51RTJ/jeU6WERbvr8nqKMWQJRX1E=
+    tokenDuration: 1D
+
+springdoc:
+  api-docs:
+    path: api-docs
+
+openweathermap:
+  api:
+    key: 134a5d4df2505d66cf179fdba1f7fefc
