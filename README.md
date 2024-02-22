@@ -1,5 +1,7 @@
 # Java Web Application with REST API
 
+!! THERE ARE NO TESTS AND LOGGING
+
 ## Overview
 This Java-based web application provides a RESTful API with a focus on security and performance. It features user authentication and authorization using JWT tokens, access control based on user roles, and a relational database for persistent data storage. The application is designed with a clean architecture, separating concerns into repository, service, and controller layers, alongside utility classes for common functions.
 
